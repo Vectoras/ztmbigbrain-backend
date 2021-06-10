@@ -29,12 +29,14 @@ app.listen(PORT, () => {
 });
 
 // controllers
+const root = require("./controllers/root");
 const signin = require("./controllers/signin.js");
 const register = require("./controllers/register.js");
 const image = require("./controllers/image.js");
 const profile = require("./controllers/profile.js");
 
 // routes
+app.get("/", root.handleRoot());
 app.post("/signin", signin.handleLogin(bcrypt, db));
 app.post("/register", register.handleRegister(bcrypt, db));
 app.put("/image", image.handleImage(db));
