@@ -29,7 +29,7 @@ app.listen(PORT, () => {
 });
 
 // controllers
-const root = require("./controllers/root");
+const root = require("./controllers/root.js");
 const signin = require("./controllers/signin.js");
 const register = require("./controllers/register.js");
 const image = require("./controllers/image.js");
