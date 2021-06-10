@@ -3,7 +3,7 @@ const { response } = require("express");
 
 // Clarifai
 const app = new Clarifai.App({
-  apiKey: "833cf82f5bb24fb99dcd15f6c1c1448d",
+  apiKey: process.env.API_CLARIFAI,
 });
 
 const handleImage = (db) => (req, res) => {
