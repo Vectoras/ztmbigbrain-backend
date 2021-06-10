@@ -5,13 +5,23 @@ const cors = require("cors");
 const knex = require("knex");
 
 // connecting to the database
+// const db = knex({
+//   client: "pg",
+//   connection: {
+//     host: "127.0.0.1",
+//     user: "smartbrain_server",
+//     password: "qwerty",
+//     database: "smartbrain",
+//   },
+// }); -- >> localhost
+
 const db = knex({
   client: "pg",
   connection: {
-    host: "127.0.0.1",
-    user: "smartbrain_server",
-    password: "qwerty",
-    database: "smartbrain",
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false,
+    },
   },
 });
 
